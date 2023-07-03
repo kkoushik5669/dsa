@@ -1,11 +1,11 @@
-void insertion_sort(vector<int>arr, int i, int n) {
+void insertion_sort(vector<ll>arr, ll i, ll n) {
 
     // Base Case: i == n.
     if (i == n) return;
 
-    int j = i;
+    ll j = i;
     while (j > 0 && arr[j - 1] > arr[j]) {
-        int temp = arr[j - 1];
+        ll temp = arr[j - 1];
         arr[j - 1] = arr[j];
         arr[j] = temp;
         j--;
