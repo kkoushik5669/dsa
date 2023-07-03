@@ -1,10 +1,10 @@
 //This algorithm places each pivot in the right position
 //In each step it make sures to put the elements left of pivot as less than pivot
 // The elements right of pivot are greater than pivot
-int partition(vector<int> &arr, int low, int high) {
-    int pivot = arr[low];
-    int i = low;
-    int j = high;
+ll partition(vector<ll> &arr, ll low, ll high) {
+    ll pivot = arr[low];
+    ll i = low;
+    ll j = high;
 
     while (i < j) {
         while (arr[i] <= pivot && i <= high - 1) {
@@ -20,9 +20,9 @@ int partition(vector<int> &arr, int low, int high) {
     return j;
 }
 
-void qs(vector<int> &arr, int low, int high) {
+void qs(vector<ll> &arr, ll low, ll high) {
     if (low < high) {
-        int pIndex = partition(arr, low, high);
+        ll pIndex = partition(arr, low, high);
         qs(arr, low, pIndex - 1);
         qs(arr, pIndex + 1, high);
     }
