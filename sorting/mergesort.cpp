@@ -1,7 +1,7 @@
-void merge(vector<int> &arr, int low, int mid, int high) {
-    vector<int> temp; // temporary array
-    int left = low;      // starting index of left half of arr
-    int right = mid + 1;   // starting index of right half of arr
+void merge(vector<ll> &arr, ll low, ll mid, ll high) {
+    vector<ll> temp; // temporary array
+    ll left = low;      // starting index of left half of arr
+    ll right = mid + 1;   // starting index of right half of arr
 
     //storing elements in the temporary array in a sorted manner//
 
@@ -30,14 +30,14 @@ void merge(vector<int> &arr, int low, int mid, int high) {
     }
 
     // transfering all elements from temporary to arr //
-    for (int i = low; i <= high; i++) {
+    for (ll i = low; i <= high; i++) {
         arr[i] = temp[i - low];
     }
 }
 
-void mergeSort(vector<int> &arr, int low, int high) {
+void mergeSort(vector<ll> &arr, ll low, ll high) {
     if (low >= high) return;
-    int mid = (low + high) / 2 ;
+    ll mid = (low + high) / 2 ;
     mergeSort(arr, low, mid);  // left half
     mergeSort(arr, mid + 1, high); // right half
     merge(arr, low, mid, high);  // merging sorted halves
